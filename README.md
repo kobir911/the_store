@@ -12,3 +12,4 @@
     2. add product images
     3. render products
     4. style products
+    
