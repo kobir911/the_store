@@ -1,19 +1,33 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ProductScreen from './screens/ProductScreen';
 import HomeScreen from './screens/HomeScreen';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import { LinkContainer } from 'react-router-bootstrap';
 
 function App() {
   return (
-    <div>
+    <div className="d-flex flex-column site-container">
       <header>
-        <Link to="/">Designer Clothing Store</Link>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <LinkContainer to="/">
+              <Navbar.Brand>Designer Clothing Store</Navbar.Brand>
+            </LinkContainer>
+          </Container>
+        </Navbar>
       </header>
       <main>
-        <Routes>
-          <Route path="/product/:slug" element={<ProductScreen />} />
-          <Route path="/" element={<HomeScreen />} />
-        </Routes>
+        <Container>
+          <Routes>
+            <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
+        </Container>
       </main>
+      <footer>
+        <div className="text-center">All right reserved to: KOBI ROZIN</div>
+      </footer>
     </div>
   );
 }
