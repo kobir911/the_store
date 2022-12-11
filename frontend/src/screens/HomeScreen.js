@@ -3,7 +3,7 @@ import Product from '../components/Product';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import axios from 'axios';
-import logger from 'use-reducer-logger';
+// import logger from 'use-reducer-logger';
 
 import  {Helmet}  from 'react-helmet-async';
 import LoadingBox from '../components/LoadingBox';
@@ -26,7 +26,8 @@ const reducer = (state, action) => {
 };
 
 function HomeScreen() {
-  const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
+  const [{ loading, error, products }, dispatch] = useReducer(reducer, {
+    //! Disabled logger !!!!!!!!!!!!!!!
     products: [],
     loading: true,
     error: '',
@@ -41,7 +42,7 @@ function HomeScreen() {
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: err.message });
       }
-      // setProducts(result.data);
+    
     };
     fetchData();
   }, []);
