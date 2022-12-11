@@ -1,16 +1,22 @@
+import React from 'react';
+
 import axios from 'axios';
 import { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
+import Container from 'react-bootstrap/esm/Container';
 import ListGroup from 'react-bootstrap/esm/ListGroup';
 import Rating from '../components/Rating';
 import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
-import {Helmet} from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import { Helmet } from 'react-helmet-async';
+import MessageBox from '../components/MessageBox';
 
 import './ProductScreen.css';
+import { getError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -44,16 +50,36 @@ function ProductScreen() {
         const result = await axios.get(`/api/products/slug/${slug}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
   }, [slug]);
 
+  const loadingBoxCenter = () => {
+    return (
+      <div className="centerLoading">
+        <LoadingBox />
+      </div>
+    );
+  };
+
+  const centerMessageError = () => {
+    return (
+      <Container className="d-flex justify-content-center mt-5">
+        <Row className="col-4 text-center">
+          <Col>
+            <MessageBox variant="danger">{error}</MessageBox>
+          </Col>
+        </Row>
+      </Container>
+    );
+  };
+
   return loading ? (
-    <div>Loading...</div>
+    loadingBoxCenter()
   ) : error ? (
-    <div>{error}</div>
+    centerMessageError()
   ) : (
     <div>
       <Row>

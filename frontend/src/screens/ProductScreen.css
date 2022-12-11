@@ -1,3 +1,15 @@
 .img-large {
   max-width: 100%;
 }
+
+.centerLoading {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 50vh;
+}
+
+.gg {
+  width: 500px;
+  text-align: center;
+}
