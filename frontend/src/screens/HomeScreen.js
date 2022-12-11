@@ -6,6 +6,7 @@ import axios from 'axios';
 import logger from 'use-reducer-logger';
 
 import './HomeScreen.css';
+import  {Helmet}  from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,6 +46,9 @@ function HomeScreen() {
 
   return (
     <>
+      <Helmet>
+        <title>Designer Clothing Store</title>
+      </Helmet>
       <h1>Featured Products</h1>
 
       <div className="products">
