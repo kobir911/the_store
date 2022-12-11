@@ -90,3 +90,10 @@
 
    1. check exist item in the cart
    2. check count in stock in backend
+
+
+16. Create Cart Screen
+
+   1. create 2 columns
+   2. display item list
+   3. create action column

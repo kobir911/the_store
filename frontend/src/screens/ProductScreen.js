@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import axios from 'axios';
 import { useEffect, useReducer } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
@@ -14,10 +14,10 @@ import Button from 'react-bootstrap/Button';
 import LoadingBox from '../components/LoadingBox';
 import { Helmet } from 'react-helmet-async';
 import MessageBox from '../components/MessageBox';
-
-import './ProductScreen.css';
 import { getError } from '../utils';
 import { Store } from '../Store';
+
+import './ProductScreen.css';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,6 +35,7 @@ const reducer = (state, action) => {
 };
 
 function ProductScreen() {
+  const navigate = useNavigate();
   const params = useParams();
   const { slug } = params;
 
@@ -79,6 +80,7 @@ function ProductScreen() {
 
   const { state, dispatch: cxtDispatch } = useContext(Store);
   const { cart } = state;
+  
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
     const quantity = existItem ? existItem.quantity + 1 : 1;
@@ -88,11 +90,12 @@ function ProductScreen() {
       return;
     }
 
-
     cxtDispatch({
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity: quantity },
     });
+
+    navigate('/cart');
   };
 
   return loading ? (
