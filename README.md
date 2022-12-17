@@ -53,77 +53,85 @@
 
 10. Add bootstrap UI Framework
 
-   1. npm install react-bootstrap bootstrap
-   2. update App.js
+    1. npm install react-bootstrap bootstrap
+    2. update App.js
 
 
 11. Create product and Rating Component
 
-   1. create Rating component
-   2. create Product component
-   3. Use Rating component in Product component
+    1. create Rating component
+    2. create Product component
+    3. Use Rating component in Product component
    
 
 12. Create Product Details Screen
 
-   1. fetch product from backend
-   2. create 3 columns for image, info and action
+    1. fetch product from backend
+    2. create 3 columns for image, info and action
 
 
 13. Create Loading and Message Component
 
-   1. create loading component
-   2. use spinner component
-   3. create message component
-   4. create utils.js to define getError function
+    1. create loading component
+    2. use spinner component
+    3. create message component
+    4. create utils.js to define getError function
 
 
 14. Create React Context For Add Item To Cart
 
-   1. Create React Context
-   2. define reducer
-   3. create store provider
-   4. implement add to cart button click handler
+    1. Create React Context
+    2. define reducer
+    3. create store provider
+    4. implement add to cart button click handler
 
 
 15. Complete Add To Cart
 
-   1. check exist item in the cart
-   2. check count in stock in backend
+    1. check exist item in the cart
+    2. check count in stock in backend
 
 
 16. Create Cart Screen
 
-   1. create 2 columns
-   2. display item list
-   3. create action column
+    1. create 2 columns
+    2. display item list
+    3. create action column
 
 
 17. Complete Cart Screen
 
-   1. click handler for inc/dec item
-   2. click handler for remove item
-   3. click handler for checkout
+    1. click handler for inc/dec item
+    2. click handler for remove item
+    3. click handler for checkout
 
 
 18. Create SignIn Screen
 
-   1. create sign in form
-   2. add email and password
-   3. add signIn button
+    1. create sign in form
+    2. add email and password
+    3. add signIn button
 
 
 19. Connect To MongoDB Database
 
-   1. create atlas mongodb database 
-   2. npm install mongoose 
-   3. connect to mongodb database
+    1. create atlas mongodb database 
+    2. npm install mongoose 
+    3. connect to mongodb database
 
 
 20. Seed Sample Data
 
-   1. create Product model
-   2. create User model
-   3. create seed route
-   4. use route in server.js
-   5. seed sample product
+    1. create Product model
+    2. create User model
+    3. create seed route
+    4. use route in server.js
+    5. seed sample product
+
+
+
+21. Seed Sample Users
+
+    1. create user model
+    2. seed sample users
+    3. create user routes
