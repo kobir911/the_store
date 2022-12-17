@@ -118,3 +118,12 @@
    1. create atlas mongodb database 
    2. npm install mongoose 
    3. connect to mongodb database
+
+
+20. Seed Sample Data
+
+   1. create Product model
+   2. create User model
+   3. create seed route
+   4. use route in server.js
+   5. seed sample product
