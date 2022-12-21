@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "the_store",
   "version": "1.0.0",
   "description": "1. Introduction\r 2. Install Tools\r 3. Create React App\r 4. Create Git Repository\r 5. List Products:",
   "main": "index.js",
@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/kobir911/the_store.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
