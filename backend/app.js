@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data.js';
+import path from 'path';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import seedRouter from './routes/seedRoutes.js';
@@ -10,7 +10,7 @@ import orderRouter from './routes/orderRoutes.js';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log('connected to mongoDB');
   })
@@ -32,9 +32,16 @@ app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders/', orderRouter);
 
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '/frontend/build')));
+
+app.get('*', (req, res) =>
+  res.send(path.join(__dirname, '/frontend/build/index.html'))
+);
+
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
-  next();
+ 
 });
 
 const port = process.env.PORT || 5000;

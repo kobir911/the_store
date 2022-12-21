@@ -219,4 +219,11 @@
      4. update user info
 
 
-     
+33.  Publish To Firebase
+
+     1. create and config node project
+     2. serve build folder in frontend folder
+     3. Create firebase account
+     4. connect it to github
+     5. Create mongodb atlas database
+     6. Commit and push
