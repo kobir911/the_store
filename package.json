@@ -2,9 +2,7 @@
   "name": "the_store",
   "version": "1.0.0",
   "description": "1. Introduction\r 2. Install Tools\r 3. Create React App\r 4. Create Git Repository\r 5. List Products:",
-  "engines": {
-    "node": "18.x"
-  },
+  
   "main": "index.js",
   "scripts": {
     "build": "cd backend && npm install && cd ../frontend && npm install && npm run build",
